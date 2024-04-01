@@ -9,8 +9,6 @@ pipeline {
    agent  any
     stages {
         stage('checkout') {
-            stages {
-        stage('Checkout') {
             steps {
                 git "https://github.com/keerthanaakul/Power-Project.git"
             }
