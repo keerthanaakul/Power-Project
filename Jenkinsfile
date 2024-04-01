@@ -9,15 +9,14 @@ pipeline {
    agent  any
     stages {
         stage('checkout') {
+            stages {
+        stage('Checkout') {
             steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/keerthanaakul/Power-Project.git"
-                        }
-                    }
-                }
+                git "https://github.com/keerthanaakul/Power-Project.git"
             }
+        }
+    }
+}
         stage('Plan') {
             steps {
                 sh 'pwd;cd terraform/ ; terraform init'
