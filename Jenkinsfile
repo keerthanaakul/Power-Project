@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git "https://github.com/keerthanaakul/Power-Project.git"
+                git branch: 'main', url: 'https://github.com/keerthanaakul/Power-Project.git'
             }
         }
         stage('Plan') {
