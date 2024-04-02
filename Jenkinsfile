@@ -16,8 +16,7 @@ pipeline {
         }
         stage('Terraform init') {
             steps {
-                sh 'C:/Users/keerthana.a/Desktop/Power/terraform'
-                sh 'terraform init'
+                sh 'cd C:/Users/keerthana.a/Desktop/Power/terraform && terraform init'
             }
         }
         stage('Terraform apply') {
