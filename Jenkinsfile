@@ -11,21 +11,18 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                scripts{
-                    dir("terraform")
-                        {
-                            git branch: 'main', url: 'https://github.com/keerthanaakul/Power-Project.git'
-                        }
-                }
+                git branch: 'main', url: 'https://github.com/keerthanaakul/Power-Project.git'
             }
         }
         stage('Terraform init') {
             steps {
+                sh 'C:\Users\keerthana.a\Desktop\Power\terraform'
                 sh 'terraform init'
             }
         }
         stage('Terraform apply') {
             steps {
+                sh 'C:\Users\keerthana.a\Desktop\Power\terraform'
                 sh 'terraform apply --auto-approve'
             }
         }
