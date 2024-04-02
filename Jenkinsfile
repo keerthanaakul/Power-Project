@@ -11,7 +11,12 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/keerthanaakul/Power-Project.git'
+                scripts{
+                    dir("terraform")
+                        {
+                            git branch: 'main', url: 'https://github.com/keerthanaakul/Power-Project.git'
+                        }
+                }
             }
         }
         stage('Terraform init') {
