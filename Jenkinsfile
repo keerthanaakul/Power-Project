@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Terraform init') {
             steps {
-                sh 'cd C:/Users/keerthana.a/Desktop/Power/terraform && terraform init'
+                sh 'cd /C:/Users/keerthana.a/Desktop/Power/terraform && terraform init'
             }
         }
         stage('Terraform apply') {
             steps {
-                sh 'C:/Users/keerthana.a/Desktop/Power/terraform'
+                sh '/C:/Users/keerthana.a/Desktop/Power/terraform'
                 sh 'terraform apply --auto-approve'
             }
         }
