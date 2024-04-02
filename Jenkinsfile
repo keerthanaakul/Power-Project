@@ -21,13 +21,11 @@ pipeline {
         }
         stage('Terraform init') {
             steps {
-                sh 'C:\terraform_1.7.5_windows_386'
                 sh 'terraform init'
             }
         }
         stage('Terraform apply') {
             steps {
-                sh 'C:\terraform_1.7.5_windows_386'
                 sh 'terraform apply --auto-approve'
             }
         }
