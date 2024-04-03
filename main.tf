@@ -1,10 +1,9 @@
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_instance" "foo" {
-  ami           = "ami-05fa00d4c63e32376" # us-west-2
-  instance_type = "t2.micro"
-  tags = {
-      Name = "TF-Instance"
-  }
+# Define the Lambda function
+resource "aws_lambda_function" "my_lambda_function" {
+  filename      = data.archive_file.lambda.output_path
+  function_name = "my-lambda-function"
+  role          = aws_iam_role.lambda_role.arn
 }
